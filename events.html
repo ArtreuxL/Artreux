@@ -7,7 +7,8 @@
 :root{--gold:#8a6d22;--gold-soft:#a4842f;--red:#9c4438;--red-soft:#b0584b;--cream:#4a4339;--muted:#736b5d;--line:rgba(74,60,40,.16)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.6;overflow-x:hidden;
+body{color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;
   background-color:#9d978b;
   background-image:
     radial-gradient(circle at 16% 20%, rgba(221,209,184,.65) 0, rgba(221,209,184,0) 20%),
@@ -15,8 +16,7 @@ body{color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;font-size
     radial-gradient(circle at 38% 62%, rgba(224,212,189,.6) 0, rgba(224,212,189,0) 21%),
     radial-gradient(circle at 88% 70%, rgba(208,196,172,.55) 0, rgba(208,196,172,0) 20%),
     radial-gradient(circle at 8% 82%, rgba(218,206,182,.55) 0, rgba(218,206,182,0) 19%),
-    radial-gradient(circle at 58% 92%, rgba(210,198,175,.5) 0, rgba(210,198,175,0) 22%);
-  background-attachment:fixed}
+    radial-gradient(circle at 58% 92%, rgba(210,198,175,.5) 0, rgba(210,198,175,0) 22%)}
 h1,h2,h3,.nav a,.btn,.eyebrow{font-family:'Oswald',sans-serif;letter-spacing:2px;text-transform:uppercase;font-weight:400}
 .eyebrow{color:var(--red-soft);font-size:13px;letter-spacing:4px}
 a{color:inherit;text-decoration:none}
@@ -28,8 +28,10 @@ section{padding:90px 24px;max-width:1100px;margin:0 auto}
 .lang button{background:none;border:1px solid rgba(74,60,40,.35);color:var(--gold);font-family:'Oswald';font-size:11px;letter-spacing:1px;padding:5px 9px;cursor:pointer;border-radius:3px}
 .lang button.on{background:var(--gold);color:#f3ecd8;border-color:var(--gold)}
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
-.hero img{height:60vh;max-height:540px;filter:drop-shadow(0 6px 18px rgba(60,45,20,.28));animation:rise 1.4s ease}
-@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero img{height:60vh;max-height:540px;filter:drop-shadow(0 6px 18px rgba(60,45,20,.28));animation:pour 3s cubic-bezier(.45,.05,.25,1) .35s both}
+@keyframes pour{0%{clip-path:inset(0 0 78% 0);opacity:.9}10%{opacity:1}100%{clip-path:inset(0 0 0 0);opacity:1}}
+.hero .tag,.hero .sub,.hero .herobtns{opacity:0;animation:fadeup .8s ease 3.1s both}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero .tag{margin-top:18px;font-size:22px;color:var(--gold);letter-spacing:1px}
 .hero .sub{color:var(--red-soft);font-size:15px;letter-spacing:3px;font-family:'Oswald';text-transform:uppercase;margin-top:6px}
 .herobtns{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
@@ -103,7 +105,7 @@ footer img{height:90px;opacity:.7;margin-bottom:14px}
 }
 [data-de]::before{content:attr(data-de)}
 body.en [data-de]::before{content:attr(data-en)}
-.disco{position:fixed;inset:0;z-index:200;pointer-events:none;overflow:hidden;opacity:1;transition:opacity 1s ease}
+.disco{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:1;transition:opacity 1s ease}
 .disco.gone{opacity:0}
 .disco .rays{position:absolute;top:20vh;left:50%;width:1100px;height:1100px;transform:translate(-50%,-50%) scale(.4);opacity:0;
   background:repeating-conic-gradient(from 0deg, rgba(201,162,90,.20) 0deg 6deg, transparent 6deg 18deg);border-radius:50%;mix-blend-mode:screen}
