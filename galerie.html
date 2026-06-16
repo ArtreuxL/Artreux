@@ -103,6 +103,22 @@ footer img{height:90px;opacity:.7;margin-bottom:14px}
 }
 [data-de]::before{content:attr(data-de)}
 body.en [data-de]::before{content:attr(data-en)}
+.disco{position:fixed;inset:0;z-index:200;pointer-events:none;overflow:hidden;opacity:1;transition:opacity 1s ease}
+.disco.gone{opacity:0}
+.disco .rays{position:absolute;top:20vh;left:50%;width:1100px;height:1100px;transform:translate(-50%,-50%) scale(.4);opacity:0;
+  background:repeating-conic-gradient(from 0deg, rgba(201,162,90,.20) 0deg 6deg, transparent 6deg 18deg);border-radius:50%;mix-blend-mode:screen}
+.disco .cord{position:absolute;top:0;left:50%;width:2px;height:14vh;background:linear-gradient(#9a7b2e,#c9a25a);transform:translateX(-50%) translateY(-16vh)}
+.disco .ball{position:absolute;top:14vh;left:50%;width:96px;height:96px;margin-left:-48px;border-radius:50%;transform:translateY(-40vh);
+  background:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.30) 0 0.5px, transparent 0.5px 9px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.30) 0 0.5px, transparent 0.5px 9px),
+    radial-gradient(circle at 28% 24%, #ffffff 0 6%, #efe6cf 14%, #cdbf9a 30%, #b89b58 52%, #7d6422 80%, #4d3a12 100%);
+  background-size:9px 9px, 9px 9px, 100% 100%;
+  box-shadow:0 0 26px rgba(201,162,90,.55), inset -10px -10px 22px rgba(0,0,0,.5), inset 7px 7px 16px rgba(255,255,255,.4)}
+.disco .ball::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,.16) 0 4deg, rgba(0,0,0,.10) 4deg 8deg);mix-blend-mode:overlay}
+.disco .ball::after{content:"";position:absolute;top:16%;left:20%;width:22%;height:16%;border-radius:50%;
+  background:radial-gradient(circle,#ffffff 0,rgba(255,255,255,0) 70%);filter:blur(1px)}
 </style></head><body><div class="lang"><button id="bde" class="on" onclick="setLang('de')">DE</button><button id="ben" onclick="setLang('en')">EN</button></div><nav class="nav"><a href="index.html" data-de="Start" data-en="Home"></a><a href="menu.html" data-de="Karte" data-en="Menu"></a><a href="galerie.html" class="active" data-de="Galerie" data-en="Gallery"></a><a href="events.html" data-de="Event &amp; Kontakt" data-en="Event &amp; Contact"></a></nav>
 <section class="pagetop center">
   <div class="eyebrow" data-de="Eindr&uuml;cke" data-en="Impressions"></div>
