@@ -17,6 +17,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;
     radial-gradient(circle at 88% 70%, rgba(208,196,172,.55) 0, rgba(208,196,172,0) 20%),
     radial-gradient(circle at 8% 82%, rgba(218,206,182,.55) 0, rgba(218,206,182,0) 19%),
     radial-gradient(circle at 58% 92%, rgba(210,198,175,.5) 0, rgba(210,198,175,0) 22%)}
+.bgphoto{position:fixed;inset:0;z-index:-3;background-position:center;background-size:cover;background-repeat:no-repeat}
+body.home::before{background-color:rgba(157,151,139,.5);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
 h1,h2,h3,.nav a,.btn,.eyebrow{font-family:'Oswald',sans-serif;letter-spacing:2px;text-transform:uppercase;font-weight:400}
 .eyebrow{color:var(--red-soft);font-size:13px;letter-spacing:4px}
 a{color:inherit;text-decoration:none}
@@ -124,7 +126,7 @@ body.en [data-de]::before{content:attr(data-en)}
   background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,.16) 0 4deg, rgba(0,0,0,.10) 4deg 8deg);mix-blend-mode:overlay}
 .disco .ball::after{content:"";position:absolute;top:16%;left:20%;width:22%;height:16%;border-radius:50%;
   background:radial-gradient(circle,#ffffff 0,rgba(255,255,255,0) 70%);filter:blur(1px)}
-</style></head><body><div class="lang"><button id="bde" class="on" onclick="setLang('de')">DE</button><button id="ben" onclick="setLang('en')">EN</button></div><nav class="nav"><a href="index.html" data-de="Start" data-en="Home"></a><a href="menu.html" class="active" data-de="Karte" data-en="Menu"></a><a href="galerie.html" data-de="Galerie" data-en="Gallery"></a><a href="events.html" data-de="Event &amp; Kontakt" data-en="Event &amp; Contact"></a></nav>
+</style></head><body class=""><div class="lang"><button id="bde" class="on" onclick="setLang('de')">DE</button><button id="ben" onclick="setLang('en')">EN</button></div><nav class="nav"><a href="index.html" data-de="Start" data-en="Home"></a><a href="menu.html" class="active" data-de="Karte" data-en="Menu"></a><a href="galerie.html" data-de="Galerie" data-en="Gallery"></a><a href="events.html" data-de="Event &amp; Kontakt" data-en="Event &amp; Contact"></a></nav>
 <section class="pagetop center">
   <div class="eyebrow" data-de="Auswahl" data-en="Selection"></div>
   <h2 data-de="Karte" data-en="Menu"></h2>
